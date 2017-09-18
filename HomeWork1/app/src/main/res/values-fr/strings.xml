@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HOMEWORK</string>
+    <string name="back_btn">ARRIÈRE</string>
+    <string name="email">Email:</string>
+    <string name="first_name">Prénom:</string>
+    <string name="form_header">FORMULAIRE D\'INSCRIPTION</string>
+    <string name="submit_btn">SOUMETTRE</string>
+    <string name="success_msg">Vous avez enregistré avec succès</string>
+    <string name="sur_name">" nom de famille"</string>
+</resources>

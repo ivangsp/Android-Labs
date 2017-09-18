@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">HOMEWORK</string>
+    <string name="first_name">Eesnimi:</string>
+    <string name="sur_name">perekonnanimi:</string>
+    <string name="email">E-post:</string>
+    <string name="submit_btn">ESITA</string>
+    <string name="form_header">
+        REGISTREERIMISVORM
+    </string>
+    <string name="back_btn">TAGASI</string>
+    <string name="success_msg">
+        Te olete edukalt registreerunud
+    </string>
+</resources>
