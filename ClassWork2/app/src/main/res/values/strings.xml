@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">CLASS WORK2</string>
+<string name="first_name">FirstName:</string>
+<string name="sur_name">SurName:</string>
+<string name="email">Email:</string>
+<string name="submit_btn">SUBMIT</string>
+<string name="form_header">REGISTRATION FORM</string>
+<string name="back_btn">BACK</string>
+<string name="success_msg">You have successfully Registered</string>
+<string name="welcome"></string>
+</resources>

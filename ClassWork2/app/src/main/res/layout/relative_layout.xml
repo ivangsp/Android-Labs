@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="20dp"
+        android:text="Temperature converter"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/values"
+        android:visibility="gone"
+        android:layout_below="@id/header"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Convert Temperature from degrees celisus to degrees Faranahit"
+        android:gravity="center"
+        android:id="@+id/text"
+        android:layout_below="@id/values"/>
+
+    <EditText
+        android:id="@+id/tmp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:inputType="number|numberDecimal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="convert"
+        android:layout_below="@+id/tmp"
+        android:id="@+id/submitBtn" />
+
+</RelativeLayout>
