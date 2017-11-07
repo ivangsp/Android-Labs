@@ -1,5 +1,6 @@
 package ee.ojiambout.ivan.classwork5_sensors;
 
+import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -42,30 +43,36 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
     }
 
     @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
-        float x = sensorEvent.values[0];
-        float y= sensorEvent.values[1];
-        float z = sensorEvent.values[2];
-        textView.setText( "X : " +x+" Y : "+y+" Z : "+z);
-        if (x>3){
-            lview.setVisibility(View.VISIBLE);
-            rview.setVisibility(View.INVISIBLE);
-            cview.setVisibility(View.INVISIBLE);
+    public void onSensorChanged(SensorEvent event) {
+        float x = event.values[0];
+        float y = event.values[1];
+        float z = event.values[2];
+
+        //tv1.setText("X : " +x+" Y : "+y+" Z : "+z);
+        if(x == 0){
+            cview.setBackgroundColor(Color.GREEN);
+            lview.setBackgroundColor(Color.TRANSPARENT);
+            rview.setBackgroundColor(Color.TRANSPARENT);
+        }else if (x < 0){
+            rview.setBackgroundColor(Color.GREEN);
+            lview.setBackgroundColor(Color.TRANSPARENT);
+            cview.setBackgroundColor(Color.TRANSPARENT);
+        }else{
+            lview.setBackgroundColor(Color.GREEN);
+            cview.setBackgroundColor(Color.TRANSPARENT);
+            rview.setBackgroundColor(Color.TRANSPARENT);
         }
-        else if (x<-3){
-            rview.setVisibility(View.VISIBLE);
-            lview.setVisibility(View.INVISIBLE);
-            cview.setVisibility(View.INVISIBLE);
-        }
-        else
-            rview.setVisibility(View.INVISIBLE);
-            lview.setVisibility(View.INVISIBLE);
-            cview.setVisibility(View.VISIBLE);
     }
 
     @Override
-    public void onAccuracyChanged(Sensor sensor, int i) {
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        sensorManager.unregisterListener(this);
     }
 
     @Override
@@ -73,11 +80,5 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onResume();
         sensorManager.registerListener(this, mAcc,
                 SensorManager.SENSOR_DELAY_NORMAL);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        sensorManager.unregisterListener(this);
     }
 }
